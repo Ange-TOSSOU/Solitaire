@@ -16,10 +16,23 @@ public class Carte {
 
     private int valeur;
     private int couleur;
+    private boolean visible;
 
     public Carte(int valeur, int couleur) {
+        String possibleException = "";
+        if (valeur < AS || valeur > ROI) {
+            possibleException += "Illegal Valeur : " + valeur + "\n";
+        }
+        if (couleur < PIQUES || couleur > TREFLES) {
+            possibleException += "Illegal Couleur : " + couleur + "\n";
+        }
+        if (!possibleException.isEmpty()) {
+            throw new IllegalArgumentException(possibleException);
+        }
+
         this.valeur = valeur;
         this.couleur = couleur;
+        this.visible = false;
     }
 
     public int getValeur() {
@@ -42,6 +55,13 @@ public class Carte {
         }
 
         return "Undefined";
+    }
+
+    public boolean getVisible() {
+        return this.visible;
+    }
+    public void retourne() {
+        this.visible = true;
     }
 
     @Override

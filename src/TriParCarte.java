@@ -1,6 +1,6 @@
 import java.util.Comparator;
 
-public class SortByCarte implements Comparator<Carte> {
+public class TriParCarte implements Comparator<Carte> {
     @Override
     public int compare(Carte o1, Carte o2)
     {

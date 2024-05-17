@@ -1,4 +1,4 @@
-public class Test {
+public class TestCarte {
     public static void main(String [] args){
         Carte c1 = new Carte(10,2);
         Carte c2 = new Carte(Carte.ROI,Carte.TREFLES);

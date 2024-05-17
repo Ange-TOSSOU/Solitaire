@@ -46,14 +46,23 @@ public class MainJoueur {
     }*/
 
     public void trieParValeur() {
-        mainJ.sort(new SortByCarte());
+        mainJ.sort(new TriParCarte());
     }
 
     @Override
     public String toString() {
-        String res = "";
+        if (this.mainJ.size() == 0) {
+            return "Aucune carte dans la main du joueur.\n";
+        }
+
+        String res = "La main du joueur contient ";
+        if(this.mainJ.size() == 1) {
+            res += "1 carte.\n";
+        } else {
+            res += this.mainJ.size() + " cartes.\n";
+        }
         for (Carte c : mainJ) {
-            res += c.toString() + "\n";
+            res += "  " + c.toString() + "\n";
         }
 
         return res;
